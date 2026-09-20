@@ -52,18 +52,19 @@ def submit(request, course_id):
 
     submission.selected_choices.set(selected_choices)
 
-   return redirect(
-    "show_exam_result",
-    course_id=course.id,
-    submission_id=submission.id
-)
+    return redirect(
+        "show_exam_result",
+        course_id=course.id,
+        submission_id=submission.id
+    )
 
 
 @login_required
-def show_exam_result(request, submission_id):
+def show_exam_result(request, course_id, submission_id):
     submission = get_object_or_404(
         Submission,
         id=submission_id,
+        course_id=course_id,
         user=request.user
     )
 
@@ -102,3 +103,122 @@ def show_exam_result(request, submission_id):
             "total_questions": total_questions,
         }
     )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
