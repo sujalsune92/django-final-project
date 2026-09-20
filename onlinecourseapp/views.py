@@ -52,10 +52,11 @@ def submit(request, course_id):
 
     submission.selected_choices.set(selected_choices)
 
-    return redirect(
-        "show_exam_result",
-        submission_id=submission.id
-    )
+   return redirect(
+    "show_exam_result",
+    course_id=course.id,
+    submission_id=submission.id
+)
 
 
 @login_required
